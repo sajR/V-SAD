@@ -1,4 +1,4 @@
-# V-SAD -Visual - Speech Activity Detection.
+# V-SAD - Visual-Speech Activity Detection.
 
 Detecting speech activity with neural networks via facial images. The purpose of the network is to identify if the image belongs to speecc or non-speech
 
