@@ -64,9 +64,9 @@ class CRNN():
         for fileName in os.listdir(pathName):
             image=cv2.imread(pathName+"/"+fileName)
             data[counter]=image[:,:,0]
-            if "nospeaking" in fileName:
+            if "nospeech" in fileName:
                 labels.append("0")
-            elif "speaking" in fileName:
+            elif "speech" in fileName:
                 labels.append("1")
             else:
                 print ("problem")
