@@ -1,5 +1,4 @@
-# CRNN
-# Convolutional Reccurent Neural Network for SAD (Speech Activity Detection)
+# CRNN - Convolutional Reccurent Neural Network for SAD (Speech Activity Detection)
 Network that creates its own features and learns the features across the images within a sequence. 
 
 3 Layer CNN learns the features of the images which are then passed to RNN to learn contextual dependencies across the images.
