@@ -1,4 +1,4 @@
-# CNN-RNN
+# CNN-RNN - Convolutional Neural Network - Recurrent Neural Network
 Based on https://arxiv.org/abs/1604.04573 for visual-Speech Activity Detection (SAD).
 
 Uilises existing CNN (Xception) for embeddings (in this case as input) followed by an RNN - Encoder/Encoder-Decoder.
