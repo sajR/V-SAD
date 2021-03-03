@@ -6,5 +6,5 @@ Network that creates its own features and learns the features across the images 
 
 The RNN are in form of Encoder/Encoder-Decoder.
 
-Encoder - single layer of RNN classifying last image of sequence
+Encoder - single layer of RNN classifying last image of sequence.
 Encoder-Decoder- single layer for encoding/decoding classifying all images in a sequence (Seq2Seq)
