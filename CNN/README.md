@@ -1,4 +1,4 @@
-# CNN for SAD
+# CNN - Convolutional Neural Network
 # Detecting speech acivity with still images (single image - whether its speech or non-speech) using CNN.  
 CNN - 3 CONV layer CNN with single Fully Connected (FC) layer and a classification layer.  Adapted from literature with different kernal and filter sizes, dropout and BN. Model tested to compare perfomance and time against smaller VGG
 
