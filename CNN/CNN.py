@@ -9,7 +9,6 @@ from keras import backend as K
 import matplotlib.pyplot as plt  
 import os
 from keras.preprocessing.image import image
-from keras.preprocessing.image import img_to_array
 import numpy as np
 
 
@@ -46,7 +45,7 @@ class CNN():
         model=self.defineModel()
         history=self.executeModel(model, train_generator, validation_generator,test_generator)
         self.plotFigure(history)    
-        self.predict(model, test_data_dir)
+        self.getPredictions(model, test_data_dir)
     def preProcessing(self, data_dir):
         # Pre-processing of images with Image Data Generator https://keras.io/api/preprocessing/image/
         data_rescale = ImageDataGenerator(rescale=1./ 255)
