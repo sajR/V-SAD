@@ -7,6 +7,13 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Flatten, Dense,Dropout
 from keras import backend as K
 import matplotlib.pyplot as plt  
+import os
+from keras.preprocessing.image import image
+from keras.preprocessing.image import img_to_array
+import numpy as np
+
+
+
 
 img_width=100
 img_height =100
@@ -39,6 +46,7 @@ class CNN():
         model=self.defineModel()
         history=self.executeModel(model, train_generator, validation_generator,test_generator)
         self.plotFigure(history)    
+        self.predict(model, test_data_dir)
     def preProcessing(self, data_dir):
         # Pre-processing of images with Image Data Generator https://keras.io/api/preprocessing/image/
         data_rescale = ImageDataGenerator(rescale=1./ 255)
@@ -103,6 +111,21 @@ class CNN():
         plt.xlabel('epoch')  
         plt.legend(['t acc', 'v acc','t loss','v loss'], loc='upper left')  
         plt.show()  
+    def getPredictions(self,model,test_dir):
+        # Obtains predictions from a test directory
+        count=0
+        imageFormat='.png'
+        fileList=[os.path.join(test_dir,f) for f in os.listdir(test_dir) if f.endswith(imageFormat)]
+        for imagename in fileList:
+            img = image.load_img(imagename, target_size=(img_width, img_height),color_mode="grayscale")
+            img = image.img_to_array(img)
+            img=img/255
+            img = np.expand_dims(img, axis=0)
+            classes=model.predict_classes(img)
+            count=count+1
+            print (classes)
+        
+        
 if __name__ == '__main__':
     # Creats CNN model with defined hyperparameters
     CNN1=CNN(conv_size_1=0,conv_size_2=0,conv_size_3=0,filter_size=(0,0), epochs=0,batch_size=0, dropout_rate_1=0, dropout_rate_2=0)
