@@ -89,11 +89,11 @@ class CNN():
     def executeModel(self,model,train_generator,validation_generator, test_generator):
         # Compiles and runs the model. model is trained on train and val sets with test set used to evaluate the model.
         history=model.fit_generator(
-        train_generator,
-        steps_per_epoch=len(train_generator),
-        epochs=self.epochs,
-        validation_data=validation_generator,
-        validation_steps=len(validation_generator))
+            train_generator,
+            steps_per_epoch=len(train_generator),
+            epochs=self.epochs,
+            validation_data=validation_generator,
+            validation_steps=len(validation_generator))
         scores=model.evaluate_generator(test_generator,len(test_generator))
         print ("scores",scores)
         # model.save('CNN.h5')
