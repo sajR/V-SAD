@@ -40,7 +40,7 @@ class CNN():
             self.input_shape = (img_width, img_height, 1) 
         
         
-        train_generator=CNN1.preProcessing(train_data_dir)
+        train_generator=self.preProcessing(train_data_dir)
         validation_generator=self.preProcessing(validation_data_dir)
         test_generator=self.preProcessing(test_data_dir)
         model=self.defineModel()
